@@ -69,6 +69,28 @@ const textNodes = [
             {
                 text: 'You pick up the knife and continue to approach the house.',
                 setState: { knife: true },
+                nextText: 4,
+            },
+        ]
+    },
+    {
+        id: 4,
+        text: 'You go up the stairs of the porch and knock on the big wooden door. No one answers. You attempt to open the door.',
+        options: [
+            {
+                text: 'Attempt to insert the oddly shaped cross into the keyhole of door.',
+                requiredState: (currentState) => currentState.oddcross,
+                setState: { oddcross: true },
+                nextText: 6,
+            },
+            {
+                text: 'You try to jimmy the door with the knife.',
+                requiredState: (currentState) => currentState.knife,
+                setState: { knife: true },
+                nextText: 6,
+            },
+            {
+                text: 'The door looks old. You try to knock it down with brute force.',
                 nextText: 6,
             },
         ]
