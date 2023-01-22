@@ -12,8 +12,15 @@ function startGame() {
 }
 
 function showTextNode(textNodeIndex) {
+
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    if (textNode.background) {
+        document.body.style.backgroundImage = `url(${textNode.background})`;
+    } else {
+        document.body.style.backgroundImage = "url('assets/old_wood.jpg')";
+    }
     storyElement.innerText = textNode.story
+
     while (optionButtonsElement.firstChild) {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild)
     }
@@ -34,12 +41,12 @@ function showOption(option) {
 }
 
 function selectOption(option) {
-    const nextTextNodeId = option.nextStory
-    if (nextTextNodeId <= 0) {
-        return startGame()
+    const nextStoryNodeId = option.nextStory;
+    if (nextStoryNodeId <= 0) {
+        location.reload();
     }
     inventory = Object.assign(inventory, option.setInventory)
-    showTextNode(nextTextNodeId)
+    showTextNode(nextStoryNodeId)
 }
 
 const textNodes = [
@@ -208,17 +215,18 @@ const textNodes = [
         options: [
             {
                 choice: 'Old house should be handled with care! Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
     {
         id: 12,
         story: 'You climb up the stairs but midway up the staircase you hear the snapping of wood under you. The old, cold wood breaks under the weight of your body. You fall 25 feet straight into the basement. You fall unconscious.',
+        background: 'assets/limbo_background_by_deithwx-d56677t.jpg',
         options: [
             {
                 choice: 'Who would\'ve guessed the stairs would break? Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -228,7 +236,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Hypothermia is a silent killer! Try to find some warmth. Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -238,7 +246,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Congratulations! You made it through the night. Play again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -248,7 +256,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Congratulations! You made it through the night. Play again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -313,20 +321,22 @@ const textNodes = [
     {
         id: 9,
         story: 'As you explore the pitch black woods, your light attracts a terrifying bear! You have no way of defending yourself and fall victem to its deadly claws.',
+        background: 'assets/limbo_background_by_deithwx-d56677t.jpg',
         options: [
             {
                 choice: 'Do you really want to draw unknown attention? Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
     {
         id: 11,
         story: 'As you explore the pitch black woods with no light, you begin to hear something running towards you. You begin to run but with no light, you fail to see the giant hole in the ground. You fall in and lose consciousness.',
+        background: 'assets/limbo_background_by_deithwx-d56677t.jpg',
         options: [
             {
                 choice: 'It\'s too dark to be running in unknown woods! Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -336,7 +346,7 @@ const textNodes = [
     //     options: [
     //         {
     //             choice: 'Congratulations! Play again.',
-    //             nextText: -1,
+    //             nextStory: -1,
     //         }
     //     ]
     // },
