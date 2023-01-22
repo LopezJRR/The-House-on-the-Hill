@@ -41,12 +41,12 @@ function showOption(option) {
 }
 
 function selectOption(option) {
-    const nextTextNodeId = option.nextStory;
-    if (nextTextNodeId <= 0) {
+    const nextStoryNodeId = option.nextStory;
+    if (nextStoryNodeId <= 0) {
         location.reload();
     }
     inventory = Object.assign(inventory, option.setInventory)
-    showTextNode(nextTextNodeId)
+    showTextNode(nextStoryNodeId)
 }
 
 const textNodes = [
@@ -215,7 +215,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Old house should be handled with care! Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -226,7 +226,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Who would\'ve guessed the stairs would break? Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -236,7 +236,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Hypothermia is a silent killer! Try to find some warmth. Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -246,7 +246,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Congratulations! You made it through the night. Play again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -256,7 +256,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Congratulations! You made it through the night. Play again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -325,7 +325,7 @@ const textNodes = [
         options: [
             {
                 choice: 'Do you really want to draw unknown attention? Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -336,7 +336,7 @@ const textNodes = [
         options: [
             {
                 choice: 'It\'s too dark to be running in unknown woods! Try again!',
-                nextText: -1,
+                nextStory: -1,
             }
         ]
     },
@@ -346,7 +346,7 @@ const textNodes = [
     //     options: [
     //         {
     //             choice: 'Congratulations! Play again.',
-    //             nextText: -1,
+    //             nextStory: -1,
     //         }
     //     ]
     // },
