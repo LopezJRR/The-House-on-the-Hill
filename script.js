@@ -12,15 +12,15 @@ function startGame() {
 }
 
 function showTextNode(textNodeIndex) {
-    
+
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-    if (textNode.background){
+    if (textNode.background) {
         document.body.style.backgroundImage = `url(${textNode.background})`;
     } else {
         document.body.style.backgroundImage = "url('assets/old_wood.jpg')";
     }
     storyElement.innerText = textNode.story
-    
+
     while (optionButtonsElement.firstChild) {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild)
     }
