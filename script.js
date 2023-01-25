@@ -14,11 +14,13 @@ function startGame() {
 function showTextNode(textNodeIndex) {
 
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+
     if (textNode.background) {
         document.body.style.backgroundImage = `url(${textNode.background})`;
     } else {
         document.body.style.backgroundImage = "url('assets/old_wood.jpg')";
     }
+
     storyElement.innerText = textNode.story
 
     while (optionButtonsElement.firstChild) {
@@ -53,6 +55,7 @@ const textNodes = [
     {
         id: 1,
         story: 'You wake up at the top of a snowy hill surrounded by dense woods. To the north, you see a dilapidated house. To the south past the woods, you see the faint light of an old gas station above the tree tops. Where do you go?',
+        background: 'assets/mountainwithsnow.jpg',
         options: [
             {
                 choice: 'Approach the house.',
@@ -212,6 +215,7 @@ const textNodes = [
     {
         id: 52,
         story: 'You rush into the door, but it\'s solid wood! Instead of the door breaking, the vibrations from the impact cause the roof above you to collapse, knocking you unconscious and burying you under a mountain of rubble.',
+        background: 'assets/gameover.jpg',
         options: [
             {
                 choice: 'Old house should be handled with care! Try again!',
@@ -222,7 +226,7 @@ const textNodes = [
     {
         id: 12,
         story: 'You climb up the stairs but midway up the staircase you hear the snapping of wood under you. The old, cold wood breaks under the weight of your body. You fall 25 feet straight into the basement. You fall unconscious.',
-        background: 'assets/limbo_background_by_deithwx-d56677t.jpg',
+        background: 'assets/gameover.jpg',
         options: [
             {
                 choice: 'Who would\'ve guessed the stairs would break? Try again!',
@@ -233,6 +237,7 @@ const textNodes = [
     {
         id: 18,
         story: 'You fall alseep but with no way of keeping warm the cold steadily dropping temperature throughout the night causes your body to slow its proceeses eventually coming to a complete stop.',
+        background: 'assets/gameover.jpg',
         options: [
             {
                 choice: 'Hypothermia is a silent killer! Try to find some warmth. Try again!',
@@ -243,6 +248,7 @@ const textNodes = [
     {
         id: 20,
         story: 'You wake up to the rising sun and decide to explore the outside of the house. Behind the house you find a small cabin with all of your friends in it. It seems you had too much to drink and passed out while looking for the restroom!',
+        background: 'assets/person-mountain-top.jpg',
         options: [
             {
                 choice: 'Congratulations! You made it through the night. Play again!',
@@ -253,6 +259,7 @@ const textNodes = [
     {
         id: 24,
         story: 'You wake up to the rising sun and decide to explore the outside of the house. Behind the house you find a small cabin with all of your friends in it. It seems you had too much to drink and passed out while looking for the restroom!',
+        background: 'assets/person-mountain-top.jpg',
         options: [
             {
                 choice: 'Congratulations! You made it through the night. Play again!',
@@ -321,7 +328,7 @@ const textNodes = [
     {
         id: 9,
         story: 'As you explore the pitch black woods, your light attracts a terrifying bear! You have no way of defending yourself and fall victem to its deadly claws.',
-        background: 'assets/limbo_background_by_deithwx-d56677t.jpg',
+        background: 'assets/gameover.jpg',
         options: [
             {
                 choice: 'Do you really want to draw unknown attention? Try again!',
@@ -332,7 +339,7 @@ const textNodes = [
     {
         id: 11,
         story: 'As you explore the pitch black woods with no light, you begin to hear something running towards you. You begin to run but with no light, you fail to see the giant hole in the ground. You fall in and lose consciousness.',
-        background: 'assets/limbo_background_by_deithwx-d56677t.jpg',
+        background: 'assets/gameover.jpg',
         options: [
             {
                 choice: 'It\'s too dark to be running in unknown woods! Try again!',
@@ -340,16 +347,6 @@ const textNodes = [
             }
         ]
     },
-    // {
-    //     id: Victory,
-    //     story: 'You find the exit and escape the house!',
-    //     options: [
-    //         {
-    //             choice: 'Congratulations! Play again.',
-    //             nextStory: -1,
-    //         }
-    //     ]
-    // },
 ]
 
 startGame()
