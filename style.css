@@ -16,18 +16,6 @@ body {
     background-size: contain;
 }
 
-.homepage {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("assets/old_wood.jpg");
-    background-size: contain;
-}
-
 .container {
     width: 800px;
     max-width: 80%;
